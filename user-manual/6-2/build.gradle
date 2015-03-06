@@ -1,0 +1,12 @@
+task upper << {
+    String someString = 'mY_nAme'
+    println "Original: " + someString;
+    println "Upper case: " + someString.toUpperCase()
+}
+
+////////////////////////////////////////////////////
+// <===================OUTPUT===================> //
+// (master) i309511:6-2 $ gradle -q upper         //
+// Original: mY_nAme                              //
+// Upper case: MY_NAME                            //
+////////////////////////////////////////////////////

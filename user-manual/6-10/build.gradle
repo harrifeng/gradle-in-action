@@ -1,0 +1,13 @@
+task myTask {
+    ext.myProperty = "myValue"
+}
+
+task printTaskProperties << {
+    println myTask.myProperty
+}
+
+///////////////////////////////////////////////////////////
+// <===================OUTPUT===================>        //
+// (master) i309511:6-10 $ gradle -q printTaskProperties //
+// myValue                                               //
+///////////////////////////////////////////////////////////

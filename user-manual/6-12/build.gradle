@@ -1,0 +1,24 @@
+task distribution << {
+    println "We build the zip with version=$version"
+}
+
+task release(dependsOn: 'distribution') << {
+    println 'We release now'
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+    if (taskGraph.hasTask(release)) {
+        version = '1.0'
+    } else {
+        version = '1.0-SNAPSHOT'
+    }
+}
+
+////////////////////////////////////////////////////
+// <===================OUTPUT===================> //
+// (master) i309511:6-12 $ gradle -q distribution //
+// We build the zip with version=1.0-SNAPSHOT     //
+// (master) i309511:6-12 $ gradle -q release      //
+// We build the zip with version=1.0              //
+// We release now                                 //
+////////////////////////////////////////////////////

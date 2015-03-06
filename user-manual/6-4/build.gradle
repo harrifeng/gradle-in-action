@@ -1,0 +1,14 @@
+task hello << {
+    println 'Hello world!'
+}
+
+task intro(dependsOn: hello) << {
+    println "I'm Gradle"
+}
+
+////////////////////////////////////////////////////
+// <===================OUTPUT===================> //
+// (master) i309511:6-4 $ gradle -q intro         //
+// Hello world!                                   //
+// I'm Gradle                                     //
+////////////////////////////////////////////////////

@@ -1,0 +1,14 @@
+4.times { counter ->
+    task "task$counter" << {
+        println "I'm task number $counter"
+    }
+}
+task0.dependsOn task2, task3
+
+////////////////////////////////////////////////////
+// <===================OUTPUT===================> //
+// (master) i309511:6-7 $ gradle -q task0         //
+// I'm task number 2                              //
+// I'm task number 3                              //
+// I'm task number 0                              //
+////////////////////////////////////////////////////
