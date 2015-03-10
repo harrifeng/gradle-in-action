@@ -1,0 +1,10 @@
+task hello << {
+    println "using build file '$buildFile.name' in '$buildFile.parentFile.name'."
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// <===================OUTPUT===================>                                       //
+// c:\code\gradle-in-action\user-manual\11\4>gradle -q -b subdir/myproject.gradle hello //
+// gradle -q -b subdir/myproject.gradle hello                                           //
+// using build file 'myproject.gradle' in 'subdir'.                                     //
+//////////////////////////////////////////////////////////////////////////////////////////
