@@ -1,0 +1,43 @@
+///////////////////////////////////////////////////////////
+//       +------------------------------------------+    //
+//       |                                          |    //
+//       V                                          |    //
+// +---------+   +-------------+   +-------+    +---+--+ //
+// | compile |<--+ compileTest |<--+ test  |<---+ dist | //
+// +---------+   +-------------+   +-----+-+    +------+ //
+//       ^                               |               //
+//       |                               |               //
+//       +-------------------------------+               //
+///////////////////////////////////////////////////////////
+task compile << {
+    println 'compling source'
+}
+
+task compileTest << {
+    println 'compling unit test'
+}
+
+task test(dependsOn: [compile, compileTest]) << {
+    println 'running unit tests'
+}
+
+task dist(dependsOn: [compile, test]) << {
+    println 'building the distrubution'
+}
+
+////////////////////////////////////////////////////
+// <===================OUTPUT===================> //
+// (master) i309511:1 $ gradle dist test          //
+// :compile                                       //
+// compling source                                //
+// :compileTest                                   //
+// compling unit test                             //
+// :test                                          //
+// running unit tests                             //
+// :dist                                          //
+// building the distrubution                      //
+//                                                //
+// BUILD SUCCESSFUL                               //
+//                                                //
+// Total time: 2.511 secs                         //
+////////////////////////////////////////////////////
