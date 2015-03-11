@@ -1,0 +1,27 @@
+task check << {
+    println project.name
+    println project.path
+    println project.description
+    println project.projectDir
+    println project.group
+    println project.version
+    println project.ant
+    // They are the same, if no local variables called buildDir
+    println buildDir
+    println project.buildDir
+
+}
+
+/////////////////////////////////////////////////////////////////
+// <===================OUTPUT===================>              //
+// (master) i309511:1 $ gradle -q check                        //
+// 1                                                           //
+// :                                                           //
+// null                                                        //
+// /Users/i309511/Code/gradle-in-action/user-manual/13/1       //
+//                                                             //
+// unspecified                                                 //
+// org.gradle.api.internal.project.DefaultAntBuilder@43999ca0  //
+// /Users/i309511/Code/gradle-in-action/user-manual/13/1/build //
+// /Users/i309511/Code/gradle-in-action/user-manual/13/1/build //
+/////////////////////////////////////////////////////////////////

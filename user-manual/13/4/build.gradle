@@ -1,0 +1,11 @@
+configurations.ext.runtime = [1, 2]
+task test << {
+    configurations.runtime.each { Integer i -> println i }
+}
+
+////////////////////////////////////////////////////
+// <===================OUTPUT===================> //
+// (master) i309511:4 $ gradle -q test            //
+// 1                                              //
+// 2                                              //
+////////////////////////////////////////////////////

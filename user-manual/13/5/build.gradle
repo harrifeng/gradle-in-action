@@ -1,0 +1,16 @@
+task test << {
+    // Using a getter method
+    println project.buildDir
+    println getProject().getBuildDir()
+
+    // Using a setter method
+    project.buildDir = 'target'
+    getProject().setBuildDir('target')
+}
+
+/////////////////////////////////////////////////////////////////
+// <===================OUTPUT===================>              //
+// (master) i309511:5 $ gradle -q test                         //
+// /Users/i309511/Code/gradle-in-action/user-manual/13/5/build //
+// /Users/i309511/Code/gradle-in-action/user-manual/13/5/build //
+/////////////////////////////////////////////////////////////////

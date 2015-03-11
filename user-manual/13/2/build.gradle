@@ -1,0 +1,13 @@
+def buildDir = "localDir"
+
+task show << {
+    println buildDir
+    println project.buildDir
+}
+
+/////////////////////////////////////////////////////////////////
+// <===================OUTPUT===================>              //
+// (master) i309511:2 $ gradle -q show                         //
+// localDir                                                    //
+// /Users/i309511/Code/gradle-in-action/user-manual/13/2/build //
+/////////////////////////////////////////////////////////////////
